@@ -1,0 +1,15 @@
+#+setupfile: ~/vault/org/aux/setupfile.org
+#+options: author:t
+#+bind: org-export-latex-title-command "\\maketitle"
+#+latex_header: \usepackage{amsmath} \usepackage{mathtools}
+#+latex_header: \usepackage{cancel}
+#+title: Statistics One, Prof. Andrew Conway
+#+author: John W. Henderson
+#+date: Last revised: \today
+
+
+* Week 1: Basics
+To get causality, which is what you'd like from studies/statistics, you need:
+- True independent variables
+- Random and representative samples
+- No confounds (as few as possible)
