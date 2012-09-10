@@ -13,3 +13,21 @@ To get causality, which is what you'd like from studies/statistics, you need:
 - True independent variables
 - Random and representative samples
 - No confounds (as few as possible)
+
+Studies of correlation aren't the same as identifying causal relationships. Examples
+given include intelligence testing. Giving tests and trying to find correlations
+between various test takers provides valuable information regarding the nature of
+intelligence and factors that affect it, but do not tell us about the causal factors
+the increase/decrease intelligence.
+
+Another example is that of concussions. They're not really random/controlled since
+there was no control over who got a concussion and who didn't. There are other
+confounding variables at work. These studies are examining the state from the
+consussion onward and looking for correlation. Confounding variables might be
+previous history of consussions, characteristics about football players that might
+lead them to get concussions (more aggressive, certain positions played, etc.).
+
+The above are examples of /quasi-independent/ variables. They are independent in that
+they serve as the starting point for looking for dependent effects, but they weren't
+randomly assigned, aren't necessarily from a representative sample distribution,
+etc.
