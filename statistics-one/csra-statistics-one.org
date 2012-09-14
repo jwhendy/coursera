@@ -31,3 +31,73 @@ The above are examples of /quasi-independent/ variables. They are independent in
 they serve as the starting point for looking for dependent effects, but they weren't
 randomly assigned, aren't necessarily from a representative sample distribution,
 etc.
+
+Positive skew means the tail is longer at the top end. Negative skew means the tail is
+longer on the lower end. Uniform has most of the data equal for all bins and normal
+follows a bell curve shape.
+
+** Assignment 1
+
+#+name: wk1
+#+begin_src R :session r :results output
+library(psych)
+
+# read in data
+dat <- read.csv("./wk1.txt", sep="\t", header=T)
+
+# list names
+names(dat)
+
+# split designed/aerobic
+dat.des <- dat[dat$cond=="des", ]
+dat.aer <- dat[dat$cond=="aer", ]
+
+# create canvas and histograms
+layout(matrix(c(1:8), 2, 4, byrow=T))
+hist(dat.des$pre.wm.s, main="Des, Pre, Spatial")
+hist(dat.des$pre.wm.v, main="Des, Pre, Verbal")
+hist(dat.aer$pre.wm.s, main="Aer, Pre, Spatial")
+hist(dat.aer$pre.wm.v, main="Aer, Pre, Verbal")
+hist(dat.des$post.wm.s, main="Des, Post, Spatial")
+hist(dat.des$post.wm.v, main="Des, Post, Verbal")
+hist(dat.aer$post.wm.s, main="Aer, Post, Spatial")
+hist(dat.aer$post.wm.v, main="Aer, Post, Verbal")
+
+cat("\n")
+describe(dat.des)
+cat("\n")
+describe(dat.aer)
+
+#+end_src
+
+#+RESULTS: wk1
+#+begin_example
+[1] "cond"      "pre.wm.s"  "post.wm.s" "pre.wm.v"  "post.wm.v"
+
+          var   n  mean    sd median trimmed   mad min max range  skew kurtosis
+cond*       1 100  2.00  0.00    2.0    2.00  0.00   2   2     0   NaN      NaN
+pre.wm.s    2 100 18.07  3.13   18.0   18.06  2.97  10  26    16 -0.08     0.01
+post.wm.s   3 100 23.06  4.14   23.0   23.10  4.45  11  33    22 -0.06     0.08
+pre.wm.v    4 100 16.44  8.65   16.0   15.96  8.90   0  45    45  0.58     0.47
+post.wm.v   5 100 18.02 12.20   16.5   17.38 11.86   0  52    52  0.43    -0.34
+            se
+cond*     0.00
+pre.wm.s  0.31
+post.wm.s 0.41
+pre.wm.v  0.87
+post.wm.v 1.22
+
+          var   n  mean    sd median trimmed   mad min max range  skew kurtosis
+cond*       1 100  1.00  0.00      1    1.00  0.00   1   1     0   NaN      NaN
+pre.wm.s    2 100 15.81  6.03     17   16.64  4.45   1  25    24 -1.26     0.66
+post.wm.s   3 100 23.30  5.64     23   23.66  5.93  11  37    26 -0.42    -0.20
+pre.wm.v    4 100 14.01  9.08     13   13.55  8.90   0  36    36  0.44    -0.39
+post.wm.v   5 100 16.92 11.96     16   16.50 13.34   0  43    43  0.24    -1.01
+            se
+cond*     0.00
+pre.wm.s  0.60
+post.wm.s 0.56
+pre.wm.v  0.91
+post.wm.v 1.20
+#+end_example
+
