@@ -20,6 +20,20 @@ grad = zeros(size(theta));
 % Note: grad should have the same dimensions as theta
 %
 
+pred = sigmoid(X*theta);
+
+cost = 0;
+
+for i = 1:size(pred, 1)
+
+  cost = cost + (-y(i, 1) * log(pred(i, 1)) - ((1 - y(i, 1)) * log(1 - pred(i , 1))));
+
+end
+
+J = cost/m;
+
+grad = (X' * (pred .- y)) ./ m;
+
 
 
 
